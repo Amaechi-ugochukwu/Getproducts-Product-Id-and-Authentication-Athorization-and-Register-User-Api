@@ -2,6 +2,9 @@ from django.urls import path
 from base.views import users_views as views 
 
 urlpatterns = [
-     path('login/', views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-     path('register/' , views.registerUser , name='register')
+     path('login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+     path('register/' , views.registerUser , name='register'),
+     # path('profile/ ' , views.getUserProfile , name= 'user-profile'),
+     # path('' , views.getUsers , name = "users"),
+     path('<str:pk>' , views.getUserById , name = 'user'),
 ]
